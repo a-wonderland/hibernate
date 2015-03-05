@@ -6,8 +6,8 @@
 	<session-factory>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost:3309/wonderland</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">aliceroot</property>
+		<property name="connection.username"></property>
+		<property name="connection.password"></property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
