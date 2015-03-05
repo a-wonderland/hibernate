@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ 
+ <hibernate-mapping>
+ 	<class name="com.hibernate.wonderland.persistent.Student" table="student">
+ 		<id name="id" column="studentID">
+ 			<generator class="increment" />
+ 		</id>
+ 		<property name="firstName" column="firstName" not-null="true"/>
+ 		<property name="lastName" column="lastName" not-null="true"/>
+ 		<property name="course" column="course" not-null="true"/>
+ 		<property name="fee" column="fee" not-null="true"/>
+ 		<property name="startDate" column="startDate" not-null="true"/>
+ 		<property name="endDate" column="endDate" not-null="true"/>
+ 	</class>
+ </hibernate-mapping>

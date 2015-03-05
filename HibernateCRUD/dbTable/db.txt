@@ -1,0 +1,25 @@
+CREATE SCHEMA `wonderland` ;
+
+
+CREATE TABLE `student` (
+  `studentID` int(11) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(45) DEFAULT NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `course` varchar(45) NOT NULL,
+  `fee` float NOT NULL,
+  `startDate` date NOT NULL,
+  `endDate` date NOT NULL,
+  PRIMARY KEY (`studentID`),
+  UNIQUE KEY `studentID_UNIQUE` (`studentID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DELETE FROM `wonderland`.`student`;
+
+SELECT `student`.`studentID`,
+    `student`.`firstName`,
+    `student`.`lastName`,
+    `student`.`course`,
+    `student`.`fee`,
+    `student`.`startDate`,
+    `student`.`endDate`
+FROM `wonderland`.`student`;
