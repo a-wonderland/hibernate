@@ -1,5 +1,8 @@
 package com.hibernate.wonderland.common;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -50,5 +53,35 @@ public class HelperFunction {
 			e.printStackTrace();
 		}
 		return bundle;
+	}
+	/**
+	 * This static factory method provided for compare your input format and supported format
+	 * @param testDate user input Date
+	 * @param format e.g dd/M/yyyy
+	 * @exception ParseException
+	 * @return boolean true is date is match with format
+	 */
+	public static boolean isDateValid(String testDate, String format) {
+
+		Date date = null;
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+		// make date validation more strictly
+		simpleDateFormat.setLenient(false);
+
+		if ("".equals(testDate) || testDate == null) {
+			return false;
+		}
+
+		try {
+			// valid
+			date = simpleDateFormat.parse(testDate);
+			System.out.println(date);
+
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
 	}
 }
